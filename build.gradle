@@ -1,0 +1,22 @@
+group = "codes.brick.gradle"
+version = "1.0.0-SNAPSHOT"
+
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+}
+
+sourceCompatibility = 1.8
+sourceSets.main.java.srcDirs = [ "src/" ]
+
+dependencies {
+    compile gradleApi()
+    compile "com.badlogicgames.packr:packr:2.0-SNAPSHOT"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.0'
+}
